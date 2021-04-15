@@ -146,13 +146,14 @@ Board.prototype.placePiece = function (pos, color) {
     // let positions = [];
     for (move of Board.DIRS) {
       let positions = this._positionsToFlip(pos, color, move);
-      debugger;
-    //   for (tile of positions) {
-        // let row = move[0]
-        // let col = move[1]
-        this.grid[row][col].flip
-    //   } 
+      for (tile of positions) {
+        let row = tile[0];
+        let col = tile[1];
+        this.grid[row][col].flip();
+      } 
     }
+  } else {    //
+      throw new Error('Invalid move!');
   }
 
 };
