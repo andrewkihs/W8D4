@@ -56,12 +56,19 @@ Board.prototype.getPiece = function (pos) {
  * matches a given color.
  */
 Board.prototype.isMine = function (pos, color) {
+  let row = pos[0];
+  let col = pos[1];
+  return this.grid[row][col] instanceof Piece && this.grid[row][col].color === color;
+
 };
 
 /**
  * Checks if a given position has a piece on it.
  */
 Board.prototype.isOccupied = function (pos) {
+  let row = pos[0];
+  let col = pos[1];
+  return this.grid[row][col] instanceof Piece
 };
 
 /**
@@ -78,7 +85,34 @@ Board.prototype.isOccupied = function (pos) {
  * Returns empty array if no pieces of the opposite color are found.
  */
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
+  // let row = pos[0];
+  // let col = pos[1];
+
+  // is pieces to flip a falsey value? If nothing to flip, return [];
+  // else, collect new pos in pieces to flip
+  if (!piecesToFlip) {
+    piecesToFlip = [];
+  } else {
+    piecesToFlip.push(pos)
+  }
+  let newPos = [pos[0] + dir[0], pos[1] + dir[1]] // newPos = [0,1]
+
+  if (!this.isValidPos(newPos)) {
+    return [];
+  } else if (!this.isOccupied(newPos)) {
+    return [];
+  } else if (this.isMine(newPos, color)) {
+    return piecesToFlip ? piecesToFlip : []
+  } else {//recursion}
+    return this._positionsToFlip(newPos, color, dir, piecesToFlip)
+  }
+  //push new position each time we don't hit base cases
+  // add opposite color to piecesToFlip
+  // on recursive call, newPos = pos argument
 };
+
+
+
 
 /**
  * Checks that a position is not already occupied and that the color
