@@ -64,3 +64,30 @@ h2 {
   /* background: pink; */
   border-top: 1px solid darkgray;
 }
+
+.thumb {
+  display: block;
+  position: relative;
+
+}
+
+.thumb::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.profile-friends {
+  display: flex;
+  width: 100%
+}
+.profile-friends li {
+  display:inline-block ;
+  width: 33%;
+}
+
+.profile-friends > li:nth-child(3n - 1) {
+  padding: 0 10px 10px 10px;
+}
+
