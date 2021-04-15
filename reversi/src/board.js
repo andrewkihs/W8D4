@@ -143,6 +143,16 @@ Board.prototype.placePiece = function (pos, color) {
   let col = pos[1];
   if (this.validMove(pos, color)){
     this.grid[row][col] = new Piece(color);
+    // let positions = [];
+    for (move of Board.DIRS) {
+      let positions = this._positionsToFlip(pos, color, move);
+      debugger;
+    //   for (tile of positions) {
+        // let row = move[0]
+        // let col = move[1]
+        this.grid[row][col].flip
+    //   } 
+    }
   }
 
 };
