@@ -2,6 +2,7 @@
 .profile-picture {
   display: block;
   border-radius: 5px;
+  border: 1px solid black;
   margin-top: -100px;
   position: relative;
   overflow:   hidden;
@@ -12,8 +13,8 @@
   background: #0c0;
   position: absolute;
   text-transform: uppercase;
-  /* box-shadow: 10px 5px 5px #070; */
-  letter-spacing: 1px;
+  box-shadow: 0 1px 0px 0px #070;
+  letter-spacing: 3px;
   font-size: 12px;
   transform: rotate(-45deg);
   top: 20px;
@@ -27,7 +28,21 @@
 
 }
 .profile-info{
+  /* padding-top: 10px; */
+  margin: 20px 0;
+}
 
+.content-sidebar > h2 {
+  font-size: 24px;
+  font-weight: 700;
+  display: block;
+}
+h2 {
+  margin-block-start: 0.83em;
+  display: block;
+  margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 .profile-nav{
   
@@ -35,6 +50,13 @@
 
 .profile-nav > li {
   border-bottom: 1px solid darkgray;
+  font-weight: bold;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.profile-nav > li:hover {
+  background: lightgray;
+  
 }
 
 .profile-nav > li:first-child {
