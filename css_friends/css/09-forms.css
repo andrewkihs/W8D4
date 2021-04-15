@@ -1,1 +1,10 @@
 /* PHASE 3: Forms */
+#post-title {
+  background: pink;
+  border: 1px solid black;
+}
+
+#post-body {
+  background: pink;
+  border: 1px solid black;
+}

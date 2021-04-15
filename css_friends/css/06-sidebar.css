@@ -68,7 +68,8 @@ h2 {
 .thumb {
   display: block;
   position: relative;
-
+  width: 58px;
+  height: 58px;
 }
 
 .thumb::before {
@@ -79,15 +80,23 @@ h2 {
 }
 
 .profile-friends {
+  margin-top: 10px;
   display: flex;
-  width: 100%
+  flex-wrap: wrap;
+  width: 100%;
 }
-.profile-friends li {
-  display:inline-block ;
-  width: 33%;
+.profile-friends > li {
+  padding-top: 10px;
+  /* display:inline-block ; */
+  /* flex: 4; */
+  
 }
-
+.thumb > img {
+  border-radius: 5px;
+  border: 1px solid black;
+}
 .profile-friends > li:nth-child(3n - 1) {
-  padding: 0 10px 10px 10px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
