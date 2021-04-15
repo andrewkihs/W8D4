@@ -143,7 +143,6 @@ Board.prototype.placePiece = function (pos, color) {
   let col = pos[1];
   if (this.validMove(pos, color)){
     this.grid[row][col] = new Piece(color);
-    // let positions = [];
     for (move of Board.DIRS) {
       let positions = this._positionsToFlip(pos, color, move);
       for (tile of positions) {
@@ -152,7 +151,7 @@ Board.prototype.placePiece = function (pos, color) {
         this.grid[row][col].flip();
       } 
     }
-  } else {    //
+  } else {
       throw new Error('Invalid move!');
   }
 
@@ -163,6 +162,7 @@ Board.prototype.placePiece = function (pos, color) {
  * the Board for a given color.
  */
 Board.prototype.validMoves = function (color) {
+  
 };
 
 /**
